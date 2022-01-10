@@ -326,6 +326,15 @@ export class Legend extends Element {
 
         // Draw pointStyle as legend symbol
         drawPoint(ctx, drawOptions, centerX, centerY);
+      } else if (labelOpts.useLineStyle) {
+        // Add support for line style
+        if (legendItem.borderDash) {
+          ctx.setLineDash(legendItem.borderDash);
+        }
+        ctx.beginPath();
+        ctx.moveTo(x, y + fontSize / 2);
+        ctx.lineTo(x + boxWidth, y + fontSize / 2);
+        ctx.stroke();
       } else {
         // Draw box as legend symbol
         // Adjust position when boxHeight < fontSize (want it centered)
