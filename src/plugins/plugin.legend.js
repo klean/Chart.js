@@ -331,6 +331,10 @@ export class Legend extends Element {
         if (legendItem.borderDash) {
           ctx.setLineDash(legendItem.borderDash);
         }
+        if(legendItem.fillStyle != 'transparent') {
+          ctx.strokeStyle = legendItem.fillStyle;
+        }
+        ctx.lineWidth = 2
         ctx.beginPath();
         ctx.moveTo(x, y + fontSize / 2);
         ctx.lineTo(x + boxWidth, y + fontSize / 2);
