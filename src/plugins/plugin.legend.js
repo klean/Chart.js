@@ -334,7 +334,7 @@ export class Legend extends Element {
         if(legendItem.fillStyle != 'transparent') {
           ctx.strokeStyle = legendItem.fillStyle;
         }
-        ctx.lineWidth = 2
+        ctx.lineWidth = 4
         ctx.beginPath();
         ctx.moveTo(x, y + fontSize / 2);
         ctx.lineTo(x + boxWidth, y + fontSize / 2);
